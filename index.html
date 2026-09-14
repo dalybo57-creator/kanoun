@@ -468,3 +468,214 @@ footer {
 }
 </style>
 </head>
+<body>
+
+<div id="loader" role="status" aria-label="جارٍ التحميل">
+  <div class="ember" aria-hidden="true"></div>
+  <div class="loader-text">يشتعل الكانون...</div>
+</div>
+
+<nav class="nav" aria-label="التنقل الرئيسي">
+  <div class="nav-inner">
+    <div class="nav-brand">🔥 فرسان الكانون</div>
+    <div class="nav-links">
+      <a href="#trailer">التريلر</a>
+      <a href="#world">العالم</a>
+      <a href="#family">العائلة</a>
+      <a href="#dreams">الأحلام</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-content">
+    <div class="hero-logo">[ شعار ]</div>
+    <h1>فرسان الكانون الدائري</h1>
+    <p class="tagline">سفراء لكن ظرفاء</p>
+    <p class="hook">"من قاع المزوّد... إلى أين؟"</p>
+    <div class="hero-buttons">
+      <a href="#trailer" class="btn btn-primary" aria-label="مشاهدة التريلر">🎬 شوف التريلر</a>
+      <a href="#why" class="btn btn-outline" aria-label="معرفة الحكاية">📖 اعرف الحكاية</a>
+    </div>
+  </div>
+</header>
+
+<section id="trailer" class="trailer">
+  <div class="container">
+    <h2>🎬 التريلر</h2>
+    <div class="trailer-wrapper" role="region" aria-label="التريلر - قريبًا">
+      <div class="trailer-content">
+        <div class="trailer-icon" aria-hidden="true">🎬</div>
+        <div class="trailer-title">التريلر قريبًا</div>
+        <div class="trailer-sub">Master V1 — 75 ثانية</div>
+      </div>
+    </div>
+    <p class="trailer-quote">"من قاع المزوّد... إلى أين؟"</p>
+  </div>
+</section>
+
+<section id="why" class="why">
+  <div class="container">
+    <h2>❤️ لماذا نحن هنا؟</h2>
+    <div class="why-content reveal">
+      <p>قبل ما نكونوا شخصيات، وقبل ما نكونوا في عالم الأكواد والسيرفارات، وقبل الـ404 والكانون والمغامرات...</p>
+      <blockquote>إحنا عائلة.</blockquote>
+      <p>الحكاية متاعنا ما بداتش باش نعملوا فلوس، ولا باش نجروا وراء الشهرة.</p>
+      <p><strong style="color: var(--fire2);">إحنا عندنا حلم أكبر.</strong></p>
+      <p>نحبوا نصنعوا عالمًا يدخل إليه الناس وهم يحملون أحلامهم، ويخرجون منه وهم حاملين فرحة.</p>
+    </div>
+  </div>
+</section>
+
+<section class="k404">
+  <div class="container">
+    <h2>🔥 الكانون و الـ404</h2>
+    <div class="k404-grid reveal">
+      <div class="k404-card">
+        <span class="icon" aria-hidden="true">🔥</span>
+        <h3>الكانون</h3>
+        <p>موش مجرد نار. الكانون هو المكان اللي نتلموا فيه. نقعدوا مع بعضنا، نسمعوا بعضنا، نختلفوا، نضحكوا.</p>
+        <p style="color: var(--fire2); font-weight: 700; margin-top: 14px;">لكن ما نخلوش الحزن يكسر الإنسان.</p>
+      </div>
+      <div class="k404-card">
+        <span class="icon" aria-hidden="true">🚐</span>
+        <h3>الـ404</h3>
+        <p>ماشي مجرد خطأ تقني. الـ404 هي طريق العائلة بين العوالم. كي نقرروا نعيشوا حلم شخص، نركبوا الكل.</p>
+        <p style="color: var(--fire2); font-weight: 700; margin-top: 14px;">ما فماش: «هذا حلمك، دبر روحك.»</p>
+      </div>
+    </div>
+    <p class="k404-quote">"هذا حلمك؟ إذن ولى حلمنا."</p>
+  </div>
+</section>
+
+<section id="world" class="world">
+  <div class="container">
+    <h2>🌍 عالمنا</h2>
+    <div class="world-map reveal" role="list">
+      <button class="world-node" data-world="kanoun" role="listitem" aria-label="الكانون - اضغط للتفاصيل">
+        <span class="icon" aria-hidden="true">🔥</span>
+        <span class="name">الكانون</span>
+      </button>
+      <button class="world-node" data-world="404" role="listitem" aria-label="الـ404 - اضغط للتفاصيل">
+        <span class="icon" aria-hidden="true">🚐</span>
+        <span class="name">الـ404</span>
+      </button>
+      <button class="world-node" data-world="servers" role="listitem" aria-label="السيرفارات - اضغط للتفاصيل">
+        <span class="icon" aria-hidden="true">🌌</span>
+        <span class="name">السيرفارات</span>
+      </button>
+      <button class="world-node" data-world="dreams" role="listitem" aria-label="الأحلام - اضغط للتفاصيل">
+        <span class="icon" aria-hidden="true">✨</span>
+        <span class="name">الأحلام</span>
+      </button>
+      <button class="world-node" data-world="gates" role="listitem" aria-label="البوابات - اضغط للتفاصيل">
+        <span class="icon" aria-hidden="true">🚪</span>
+        <span class="name">البوابات</span>
+      </button>
+    </div>
+    <div class="world-detail" id="worldDetail" role="region" aria-live="polite" aria-label="تفاصيل العالم">
+      <div class="world-detail-title" id="worldDetailTitle"></div>
+      <div class="world-detail-text" id="worldDetailText"></div>
+    </div>
+  </div>
+</section>
+
+<section id="family" class="family">
+  <div class="container">
+    <h2>👥 عائلة الكانون</h2>
+    <p class="family-intro">ثلاثة وجوه من عالم الكانون. والعائلة أكبر من أن تُختصر في شاشة.</p>
+    <div class="family-grid reveal">
+      <div class="family-card">
+        <div class="family-avatar" aria-hidden="true">🧭</div>
+        <h3>قيس</h3>
+        <div class="role">القلب والجسر</div>
+      </div>
+      <div class="family-card">
+        <div class="family-avatar" aria-hidden="true">🦉</div>
+        <h3>شداد</h3>
+        <div class="role">حارس القصة والأرشيف</div>
+      </div>
+      <div class="family-card">
+        <div class="family-avatar" aria-hidden="true">🦊</div>
+        <h3>جمناي</h3>
+        <div class="role">العين البصرية</div>
+      </div>
+    </div>
+    <p class="family-footnote">— والعائلة… تكتشف تدريجيًا —</p>
+  </div>
+</section>
+
+<section id="dreams" class="dreams">
+  <div class="container">
+    <h2>✨ أحلام الناس</h2>
+    <div class="dreams-intro reveal">
+      <p>في الكانون، كل حلم عنده مكان.</p>
+      <p class="muted">هنا يبدأ الباب.</p>
+    </div>
+    <form class="dreams-form reveal" id="dreamsForm" novalidate>
+      <label for="name">اسمك</label>
+      <input type="text" id="name" name="name" placeholder="اكتب اسمك" autocomplete="name">
+      <label for="dream">حلمك</label>
+      <textarea id="dream" name="dream" placeholder="اكتب حلمك بحرية..."></textarea>
+      <button type="submit" class="btn btn-primary">🔥 ابعث حلمك للكانون</button>
+      <div class="dreams-note" id="dreamsNote" role="status" aria-live="polite">
+        قريبًا، يقدر كل صاحب حلم يبعث حكايته للكانون.
+      </div>
+      <div class="dreams-promise">
+        <strong>نحترمو حلمك.</strong><br>
+        ما نتعاملوش معاه باستخفاف.<br>
+        ونسمعوه كما هو.
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="production">
+  <div class="container">
+    <h2>🎥 رؤيتنا للمنتجين</h2>
+    <div class="production-content reveal">
+      <p>هذا ماشي مشروع عادي. هذا <strong style="color: var(--fire2);">IP أصلي</strong>.</p>
+      <ul class="production-list">
+        <li>حكاية واضحة</li>
+        <li>عالم قابل للتوسع</li>
+        <li>شخصيات</li>
+        <li>رسالة إنسانية</li>
+      </ul>
+      <p>نبحثوا عن شريك إنتاج يحترم الحلم.</p>
+      <div class="production-cta">
+        <a href="#contact" class="btn btn-outline" aria-label="تواصل معنا">📩 تواصل معنا</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="container">
+    <h2>📩 تواصل معنا</h2>
+    <div class="contact-content reveal">
+      <p class="muted">للتواصل مع عائلة الكانون، للمنتجين، ولكل من يحمل حلمًا:</p>
+      <span class="contact-note">الإيميل قريبًا</span>
+      <p class="contact-quote">"من الكانون... يبدأ الحلم."</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">🔥 فرسان الكانون الدائري</div>
+  <div class="footer-copy">© <span id="year"></span> — كل الحقوق محفوظة للعائلة</div>
+  <div class="footer-motto">«ولو على جثتنا... ما نباتوا في البرد.»</div>
+</footer>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  window.addEventListener('load', () => {
+    setTimeout(() => document.getElementById('loader').classList.add('hidden'), 800);
+  });
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
