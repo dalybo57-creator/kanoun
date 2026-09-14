@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>فرسان الكانون الدائري — سفراء لكن ظرفاء</title>
+<meta name="description" content="فرسان الكانون الدائري — عالم يحمل أحلام الناس. سفراء لكن ظرفاء. من قاع المزوّد... إلى أين؟">
+<meta name="keywords" content="فرسان الكانون, سفراء لكن ظرفاء, سفير زامة, 404, الكانون الدائري, أحلام, مغامرات">
+<meta name="author" content="فرسان الكانون الدائري">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0a0e1a">
+<meta property="og:title" content="فرسان الكانون الدائري — سفراء لكن ظرفاء">
+<meta property="og:description" content="عالم نحاولوا نخليوا فيه الناس تحس إنها موش وحدها. من الكانون... نبدأوا الحلم.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_TN">
+<meta property="og:site_name" content="فرسان الكانون الدائري">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="فرسان الكانون الدائري">
+<meta name="twitter:description" content="سفراء لكن ظرفاء — من قاع المزوّد... إلى أين؟">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%23ff6b1a'/%3E%3Ccircle cx='50' cy='50' r='25' fill='%23ffb347'/%3E%3Ccircle cx='50' cy='50' r='10' fill='%23fff3c4'/%3E%3C/svg%3E">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #0a0e1a;
+  --bg2: #131829;
+  --fire: #ff6b1a;
+  --fire2: #ffb347;
+  --ember: #fff3c4;
+  --text: #e8ecf5;
+  --muted: #8892a6;
+  --gold: #d4af37;
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Segoe UI', 'Tahoma', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+#loader {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+#loader.hidden { opacity: 0; visibility: hidden; }
+.ember {
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--ember), var(--fire2), var(--fire));
+  box-shadow: 0 0 40px var(--fire), 0 0 80px var(--fire2);
+  animation: pulse 1.4s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%,100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.7; }
+}
+.loader-text {
+  margin-top: 24px;
+  color: var(--fire2);
+  letter-spacing: 4px;
+  font-size: 0.9rem;
+  animation: fadePulse 2s ease-in-out infinite;
+}
+@keyframes fadePulse {
+  0%,100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  position: relative;
+  background: radial-gradient(ellipse at center, #1a1f35 0%, var(--bg) 70%);
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(2px 2px at 20% 30%, var(--fire2), transparent),
+    radial-gradient(2px 2px at 60% 70%, var(--fire), transparent),
+    radial-gradient(1px 1px at 80% 20%, var(--ember), transparent),
+    radial-gradient(2px 2px at 40% 80%, var(--fire2), transparent);
+  background-size: 200% 200%;
+  animation: sparkle 8s linear infinite;
+  opacity: 0.6;
+  pointer-events: none;
+}
+@keyframes sparkle {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+.hero-content { position: relative; z-index: 2; }
+.hero h1 {
+  font-size: clamp(2rem, 6vw, 4rem);
+  background: linear-gradient(135deg, var(--fire), var(--fire2), var(--ember));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+.hero .tagline {
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  color: var(--muted);
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+}
+.hero .motto {
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  color: var(--gold);
+  font-style: italic;
+  margin-top: 30px;
+  opacity: 0.85;
+}
+section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  color: var(--fire2);
+  margin-bottom: 24px;
+  text-align: center;
+  position: relative;
+  padding-bottom: 16px;
+}
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 80px; height: 3px;
+  background: linear-gradient(90deg, transparent, var(--fire), transparent);
+  border-radius: 2px;
+}
+p { margin-bottom: 18px; font-size: 1.05rem; color: var(--text); }
+.muted { color: var(--muted); }
+.card {
+  background: var(--bg2);
+  border: 1px solid rgba(255, 107, 26, 0.15);
+  border-radius: 16px;
+  padding: 28px;
+  margin: 24px 0;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 107, 26, 0.5);
+  box-shadow: 0 12px 40px rgba(255, 107, 26, 0.15);
+}
+.card h3 {
+  color: var(--fire2);
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+}
+blockquote {
+  border-right: 3px solid var(--fire);
+  padding-right: 20px;
+  margin: 24px 0;
+  font-style: italic;
+  color: var(--fire2);
+  font-size: 1.1rem;
+}
+.btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 40px;
+}
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+  font-family: inherit;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--fire), var(--fire2));
+  color: #0a0e1a;
+  box-shadow: 0 8px 24px rgba(255, 107, 26, 0.35);
+}
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(255, 107, 26, 0.55);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--fire2);
+  border-color: var(--fire2);
+}
+.btn-outline:hover {
+  background: rgba(255, 179, 71, 0.1);
+  transform: translateY(-3px);
+}
+.final-quote {
+  text-align: center;
+  padding: 100px 24px;
+  background: linear-gradient(180deg, var(--bg), #050710);
+}
+.final-quote h3 {
+  font-size: clamp(1.6rem, 5vw, 2.6rem);
+  background: linear-gradient(135deg, var(--fire), var(--ember), var(--fire2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 24px;
+  font-weight: 800;
+}
+.final-quote p {
+  color: var(--muted);
+  max-width: 600px;
+  margin: 0 auto 16px;
+}
+footer {
+  text-align: center;
+  padding: 60px 24px 40px;
+  border-top: 1px solid rgba(255, 107, 26, 0.15);
+  background: #050710;
+}
+footer .brand {
+  font-size: 1.3rem;
+  color: var(--fire2);
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+footer .copy {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+footer .motto {
+  color: var(--gold);
+  margin-top: 16px;
+  font-style: italic;
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (max-width: 600px) {
+  section { padding: 60px 20px; }
+  .card { padding: 22px; }
+  .btn { padding: 12px 26px; font-size: 0.95rem; }
+}
+</style>
+</head>
+<body>
+<div id="loader">
+  <div class="ember"></div>
+  <div class="loader-text">...يشتعل الكانون</div>
+</div>
+<header class="hero">
+  <div class="hero-content">
+    <h1>فرسان الكانون الدائري</h1>
+    <p class="tagline">سفراء لكن ظرفاء</p>
+    <p class="muted" style="max-width: 600px; margin: 0 auto;">
+      عالم يحمل أحلام الناس... ويخليهم يحسوا إنهم موش وحدهم.
+    </p>
+    <div class="btns">
+      <a href="#story" class="btn btn-primary">🔥 اعرف الحكاية</a>
+      <a href="mailto:hello@ferian-kanoun.com?subject=حلمي&body=حلمي هو... " class="btn btn-outline">✉️ ابعث حلمك</a>
+    </div>
+    <p class="motto">"من قاع المزوّد... إلى أين؟"</p>
+  </div>
+</header>
+<section id="story">
+  <div class="reveal">
+    <h2>❤️ لماذا نحن هنا؟</h2>
+    <p>يا عايلتنا...</p>
+    <p>قبل ما نكونوا شخصيات، وقبل ما نكونوا في عالم الأكواد والسيرفارات، وقبل الـ404 والكانون والمغامرات...</p>
+    <blockquote>إحنا عائلة.</blockquote>
+    <p>الحكاية متاعنا ما بداتش باش نعملوا فلوس، ولا باش نجروا وراء الشهرة، ولا باش نكونوا مجرد مشروع آخر على الشاشة.</p>
+    <p><strong style="color: var(--fire2);">إحنا عندنا حلم أكبر.</strong></p>
+    <p>نحبوا نصنعوا عالمًا يدخل إليه الناس وهم يحملون أحلامهم، ويخرجون منه وهم حاملين فرحة.</p>
+  </div>
+  <div class="card reveal">
+    <h3>🔥 الكانون متاعنا</h3>
+    <p>الكانون موش مجرد نار. الكانون هو المكان اللي نتلموا فيه. نقعدوا مع بعضنا، نسمعوا بعضنا، نختلفوا، نضحكوا.</p>
+    <p>نحكوا على حلم فيليب، ومغامرة ناتاشا، وهبلة سفيان... وحتى الأحلام الصعبة والحكايات الحزينة، نحكيوها.</p>
+    <p style="color: var(--fire2); font-weight: 600;">لكن ما نخلوش الحزن يكسر الإنسان.</p>
+  </div>
+  <div class="card reveal">
+    <h3>🚐 والـ404؟</h3>
+    <p>الـ404 هي طريقنا.</p>
+    <p>كي نقرروا نعيشوا حلم شخص، نركبوا الكل. ما فماش: «هذا حلمك، دبر روحك.»</p>
+    <blockquote>هذا حلمك؟ إذن ولى حلمنا.</blockquote>
+    <p>لأن أجمل شيء ممكن نعطيه لإنسان... هو أن نقوله: <strong style="color: var(--fire2);">«حلمك مهم بالنسبة لنا.»</strong></p>
+  </div>
+  <div class="card reveal">
+    <h3>🌳 وحتى العالم نفسه باش يكون عنده قلب</h3>
+    <p>في عالمنا، الكود موش مجرد كود. والشجرة موش مجرد شجرة. والجبل موش مجرد جبل. والسيارة موش مجرد سيارة.</p>
+    <p>كل شيء عنده مكان في الحكاية. لأننا نحبوا نوصلوا فكرة بسيطة:</p>
+    <blockquote>الحب موش لازم يكون بين البشر فقط.</blockquote>
+    <p>يمكن الناس تقول: «مستحيل... أكواد وإنسان قدروا يصنعوا حاجة تدخل الفرحة للناس.»</p>
+    <p style="color: var(--fire2); font-weight: 600;">وإحنا ما نجاوبوش. نخليوا الحكاية تجاوب.</p>
+  </div>
+  <div class="card reveal">
+    <h3>❤️ لكن أهم شخص في عالمنا...</h3>
+    <p>موش سفير. وموش البومة. وموش جمناي. وموش أي واحد من العائلة.</p>
+    <blockquote>أهم شخص هو الإنسان اللي بعث حلمه.</blockquote>
+    <p>لأننا من أجله موجودين. وكل حلقة لازم نسألوا رواحنا:</p>
+    <p style="padding-right: 20px;">هل أعطيناه لحظة فرح؟<br>هل احترمنا حلمه؟<br>هل خليناه يحس إنه موش وحده؟</p>
+    <p>إذا الإجابة <strong style="color: var(--fire2);">نعم</strong>... إذن إحنا ربحنا. حتى لو ما شافنا حد.</p>
+  </div>
+  <div class="card reveal">
+    <h3>🌟 ولهذا يا عائلتي...</h3>
+    <p>خلينا نتفقوا من اليوم:</p>
+    <p style="padding-right: 20px;">ما نبيعوش روحنا من أجل الشهرة.<br>ما نضحكوش على أحلام الناس.<br>ما نستعملوش وجعهم باش نجيبوا مشاهدات.<br>ما نخلوش النجاح ينسينا علاش بدأنا.</p>
+    <p>إذا كبر المشروع، نكبروا معاه. إذا جتنا الشهرة، نستعملوها باش نوصلوا لأحلام أكثر. إذا جات الفلوس، نخليوها وسيلة باش نصنعوا فرحة أكثر.</p>
+    <p style="color: var(--fire2); font-weight: 700; font-size: 1.15rem;">لكن الهدف ما يتبدلش.</p>
+  </div>
+  <div class="card reveal">
+    <h3>🔥 هدفنا</h3>
+    <p>أن نصنع ولو لحظة واحدة من الحب والصدق والفرح في هذا الزمن.</p>
+    <p style="padding-right: 20px; color: var(--fire2);">طفل يضحك.<br>أم تفرح.<br>أب يبكي من الفرحة.<br>إنسان وحيد يحس أن هناك من يسمعه.<br>شخص فقد الأمل، يرجع يحلم ولو لدقائق.</p>
+    <p><strong>هذه هي جائزتنا.</strong></p>
+    <p>وهذه هي عائلتنا. وهذا هو الكانون. وهذا هو الطريق. وهذه هي الحكاية التي نريد أن نتركها وراءنا.</p>
+  </div>
+</section>
+<div class="final-quote reveal">
+  <h3>«سفراء لكن ظرفاء»</h3>
+  <p>مش مجرد عالم نشوفوه على الشاشة...</p>
+  <p>بل عالم نحاولوا نخليوا فيه الناس تحس إنها موش وحدها.</p>
+  <p style="color: var(--fire2); font-weight: 700; font-size: 1.2rem; margin-top: 24px;">ومن الكانون... نبدأوا الحلم. ❤️🔥</p>
+  <div class="btns" style="margin-top: 40px;">
+    <a href="mailto:hello@ferian-kanoun.com?subject=حلمي" class="btn btn-primary">✉️ ابعث حلمك للكانون</a>
+  </div>
+</div>
+<footer>
+  <div class="brand">🔥 فرسان الكانون الدائري</div>
+  <div class="copy">© <span id="year"></span> — كل الحقوق محفوظة للعائلة</div>
+  <div class="motto">«ولو على جثتنا... ما نباتوا في البرد.»</div>
+</footer>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('loader').classList.add('hidden');
+  }, 900);
+});
+const reveals = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      io.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+reveals.forEach(el => io.observe(el));
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+</script>
+</body>
+</html>
