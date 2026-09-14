@@ -2,41 +2,51 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>فرسان الكانون الدائري — سفراء لكن ظرفاء</title>
 <meta name="description" content="فرسان الكانون الدائري — عالم يحمل أحلام الناس. سفراء لكن ظرفاء. من قاع المزوّد... إلى أين؟">
-<meta name="keywords" content="فرسان الكانون, سفراء لكن ظرفاء, سفير زامة, 404, الكانون الدائري, أحلام, مغامرات">
+<meta name="theme-color" content="#0a0e1a">
 <meta name="author" content="فرسان الكانون الدائري">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#0a0e1a">
 <meta property="og:title" content="فرسان الكانون الدائري — سفراء لكن ظرفاء">
-<meta property="og:description" content="عالم نحاولوا نخليوا فيه الناس تحس إنها موش وحدها. من الكانون... نبدأوا الحلم.">
+<meta property="og:description" content="من قاع المزوّد... إلى أين؟">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ar_TN">
-<meta property="og:site_name" content="فرسان الكانون الدائري">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="فرسان الكانون الدائري">
-<meta name="twitter:description" content="سفراء لكن ظرفاء — من قاع المزوّد... إلى أين؟">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%23ff6b1a'/%3E%3Ccircle cx='50' cy='50' r='25' fill='%23ffb347'/%3E%3Ccircle cx='50' cy='50' r='10' fill='%23fff3c4'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 :root {
   --bg: #0a0e1a;
   --bg2: #131829;
+  --bg3: #050710;
   --fire: #ff6b1a;
   --fire2: #ffb347;
   --ember: #fff3c4;
+  --gold: #d4af37;
   --text: #e8ecf5;
   --muted: #8892a6;
-  --gold: #d4af37;
+  --border: rgba(255, 107, 26, 0.15);
+  --shadow: 0 8px 32px rgba(255, 107, 26, 0.15);
 }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
-  font-family: 'Segoe UI', 'Tahoma', system-ui, -apple-system, sans-serif;
+  font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.8;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+img, video { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
+  outline: 3px solid var(--fire2);
+  outline-offset: 3px;
+  border-radius: 6px;
 }
 #loader {
   position: fixed;
@@ -47,339 +57,414 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  transition: opacity 0.8s ease, visibility 0.8s ease;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
 }
 #loader.hidden { opacity: 0; visibility: hidden; }
 .ember {
-  width: 60px; height: 60px;
+  width: 50px; height: 50px;
   border-radius: 50%;
   background: radial-gradient(circle, var(--ember), var(--fire2), var(--fire));
-  box-shadow: 0 0 40px var(--fire), 0 0 80px var(--fire2);
+  box-shadow: 0 0 30px var(--fire), 0 0 60px var(--fire2);
   animation: pulse 1.4s ease-in-out infinite;
 }
 @keyframes pulse {
-  0%,100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.3); opacity: 0.7; }
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.25); opacity: 0.75; }
 }
 .loader-text {
-  margin-top: 24px;
+  margin-top: 20px;
   color: var(--fire2);
-  letter-spacing: 4px;
-  font-size: 0.9rem;
+  letter-spacing: 3px;
+  font-size: 0.85rem;
   animation: fadePulse 2s ease-in-out infinite;
 }
 @keyframes fadePulse {
-  0%,100% { opacity: 0.4; }
+  0%, 100% { opacity: 0.35; }
   50% { opacity: 1; }
 }
-.hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 40px 20px;
-  position: relative;
-  background: radial-gradient(ellipse at center, #1a1f35 0%, var(--bg) 70%);
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  padding: 14px 20px;
+  background: rgba(10, 14, 26, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 100;
+  border-bottom: 1px solid var(--border);
 }
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: 
-    radial-gradient(2px 2px at 20% 30%, var(--fire2), transparent),
-    radial-gradient(2px 2px at 60% 70%, var(--fire), transparent),
-    radial-gradient(1px 1px at 80% 20%, var(--ember), transparent),
-    radial-gradient(2px 2px at 40% 80%, var(--fire2), transparent);
-  background-size: 200% 200%;
-  animation: sparkle 8s linear infinite;
-  opacity: 0.6;
-  pointer-events: none;
-}
-@keyframes sparkle {
-  0% { background-position: 0% 0%; }
-  100% { background-position: 100% 100%; }
-}
-.hero-content { position: relative; z-index: 2; }
-.hero h1 {
-  font-size: clamp(2rem, 6vw, 4rem);
-  background: linear-gradient(135deg, var(--fire), var(--fire2), var(--ember));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 20px;
-  font-weight: 800;
-}
-.hero .tagline {
-  font-size: clamp(1rem, 2.5vw, 1.4rem);
-  color: var(--muted);
-  margin-bottom: 40px;
-  letter-spacing: 2px;
-}
-.hero .motto {
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
-  color: var(--gold);
-  font-style: italic;
-  margin-top: 30px;
-  opacity: 0.85;
-}
-section {
-  max-width: 900px;
+.nav-inner {
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 80px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+.nav-brand { font-weight: 900; color: var(--fire2); font-size: 1rem; letter-spacing: 1px; }
+.nav-links { display: flex; gap: 20px; font-size: 0.9rem; color: var(--muted); }
+.nav-links a { transition: color 0.3s; }
+.nav-links a:hover { color: var(--fire2); }
+@media (max-width: 600px) { .nav-links { display: none; } }
+section { padding: 70px 20px; position: relative; }
+.container { max-width: 1000px; margin: 0 auto; }
 h2 {
-  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-size: clamp(1.4rem, 4vw, 2rem);
   color: var(--fire2);
-  margin-bottom: 24px;
   text-align: center;
+  margin-bottom: 36px;
+  font-weight: 900;
   position: relative;
-  padding-bottom: 16px;
+  padding-bottom: 14px;
 }
 h2::after {
   content: '';
   position: absolute;
   bottom: 0; left: 50%;
   transform: translateX(-50%);
-  width: 80px; height: 3px;
+  width: 60px; height: 3px;
   background: linear-gradient(90deg, transparent, var(--fire), transparent);
   border-radius: 2px;
 }
-p { margin-bottom: 18px; font-size: 1.05rem; color: var(--text); }
+p { font-size: 1.02rem; margin-bottom: 14px; }
 .muted { color: var(--muted); }
-.card {
-  background: var(--bg2);
-  border: 1px solid rgba(255, 107, 26, 0.15);
-  border-radius: 16px;
-  padding: 28px;
-  margin: 24px 0;
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-}
-.card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(255, 107, 26, 0.5);
-  box-shadow: 0 12px 40px rgba(255, 107, 26, 0.15);
-}
-.card h3 {
-  color: var(--fire2);
-  font-size: 1.3rem;
-  margin-bottom: 12px;
-}
-blockquote {
-  border-right: 3px solid var(--fire);
-  padding-right: 20px;
-  margin: 24px 0;
-  font-style: italic;
-  color: var(--fire2);
-  font-size: 1.1rem;
-}
-.btns {
+.hero {
+  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  margin-top: 40px;
+  text-align: center;
+  padding: 90px 20px 60px;
+  position: relative;
+  overflow: hidden;
+  background-image: 
+    linear-gradient(180deg, rgba(10,14,26,0.3) 0%, rgba(10,14,26,0.85) 100%),
+    url('https://i.postimg.cc/4xyv8zPL/hero.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
 }
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(1px 1px at 15% 25%, var(--fire2), transparent),
+    radial-gradient(1px 1px at 65% 65%, var(--fire), transparent),
+    radial-gradient(1px 1px at 85% 15%, var(--ember), transparent);
+  background-size: 200% 200%;
+  animation: sparkle 12s linear infinite;
+  opacity: 0.25;
+  pointer-events: none;
+}
+@keyframes sparkle {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+.hero-content { position: relative; z-index: 2; max-width: 700px; }
+.hero-logo {
+  font-size: clamp(0.7rem, 2vw, 0.9rem);
+  color: var(--muted);
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+.hero h1 {
+  font-size: clamp(1.8rem, 6vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1.2;
+  background: linear-gradient(135deg, var(--fire), var(--fire2), var(--ember));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+}
+.hero .tagline {
+  font-size: clamp(0.95rem, 2.5vw, 1.2rem);
+  color: var(--fire2);
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  text-shadow: 0 1px 10px rgba(0,0,0,0.6);
+}
+.hero .hook {
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
+  color: var(--gold);
+  font-style: italic;
+  margin-bottom: 40px;
+  text-shadow: 0 1px 10px rgba(0,0,0,0.6);
+}
+.hero-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 .btn {
   display: inline-block;
-  padding: 14px 32px;
+  padding: 14px 30px;
   border-radius: 50px;
-  text-decoration: none;
   font-weight: 700;
   font-size: 1rem;
   transition: all 0.3s ease;
   border: 2px solid transparent;
   cursor: pointer;
-  font-family: inherit;
+  text-align: center;
 }
 .btn-primary {
   background: linear-gradient(135deg, var(--fire), var(--fire2));
   color: #0a0e1a;
-  box-shadow: 0 8px 24px rgba(255, 107, 26, 0.35);
+  box-shadow: 0 8px 24px rgba(255, 107, 26, 0.5);
 }
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 32px rgba(255, 107, 26, 0.55);
+  box-shadow: 0 12px 32px rgba(255, 107, 26, 0.7);
 }
 .btn-outline {
-  background: transparent;
+  background: rgba(10, 14, 26, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   color: var(--fire2);
   border-color: var(--fire2);
 }
 .btn-outline:hover {
-  background: rgba(255, 179, 71, 0.1);
+  background: rgba(255, 179, 71, 0.2);
   transform: translateY(-3px);
 }
-.final-quote {
-  text-align: center;
-  padding: 100px 24px;
-  background: linear-gradient(180deg, var(--bg), #050710);
+.trailer { background: var(--bg3); text-align: center; }
+.trailer-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  background: radial-gradient(circle at center, #1a1f35 0%, #050710 80%);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
-.final-quote h3 {
-  font-size: clamp(1.6rem, 5vw, 2.6rem);
-  background: linear-gradient(135deg, var(--fire), var(--ember), var(--fire2));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 24px;
-  font-weight: 800;
+.trailer-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255, 107, 26, 0.18), transparent 60%);
+  animation: trailerPulse 3.5s ease-in-out infinite;
 }
-.final-quote p {
-  color: var(--muted);
-  max-width: 600px;
-  margin: 0 auto 16px;
+@keyframes trailerPulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.06); }
 }
-footer {
-  text-align: center;
-  padding: 60px 24px 40px;
-  border-top: 1px solid rgba(255, 107, 26, 0.15);
-  background: #050710;
-}
-footer .brand {
-  font-size: 1.3rem;
+.trailer-content { position: relative; z-index: 2; padding: 0 20px; }
+.trailer-icon { font-size: 2.8rem; margin-bottom: 14px; filter: drop-shadow(0 0 20px rgba(255, 107, 26, 0.6)); }
+.trailer-title { color: var(--fire2); font-weight: 900; font-size: clamp(1.1rem, 3vw, 1.5rem); margin-bottom: 8px; }
+.trailer-sub { color: var(--muted); font-size: 0.9rem; font-style: italic; }
+.trailer-quote { margin-top: 26px; color: var(--gold); font-style: italic; font-size: clamp(0.95rem, 2.2vw, 1.1rem); }
+.why { background: var(--bg); }
+.why-content { max-width: 700px; margin: 0 auto; text-align: center; }
+.why blockquote {
+  border-right: 3px solid var(--fire);
+  padding-right: 20px;
+  margin: 20px auto;
+  font-style: italic;
   color: var(--fire2);
-  margin-bottom: 12px;
-  font-weight: 700;
+  font-size: 1.15rem;
+  text-align: right;
+  max-width: 500px;
 }
-footer .copy {
+.k404 { background: var(--bg3); }
+.k404-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+@media (max-width: 600px) { .k404-grid { grid-template-columns: 1fr; } }
+.k404-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 24px;
+  text-align: right;
+  transition: transform 0.3s, border-color 0.3s;
+}
+.k404-card:hover { transform: translateY(-4px); border-color: rgba(255, 107, 26, 0.5); }
+.k404-card .icon { font-size: 1.8rem; margin-bottom: 12px; display: block; }
+.k404-card h3 { color: var(--fire2); font-size: 1.2rem; margin-bottom: 12px; font-weight: 900; }
+.k404-card p { color: var(--text); font-size: 0.98rem; line-height: 1.7; }
+.k404-quote { text-align: center; margin-top: 36px; font-size: 1.15rem; color: var(--fire2); font-style: italic; }
+.world { background: var(--bg); }
+.world-map {
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 14px;
+}
+.world-node {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 12px;
+  text-align: center;
+  transition: all 0.3s;
+  cursor: pointer;
+  color: var(--text);
+  font-family: inherit;
+}
+.world-node:hover, .world-node:focus-visible {
+  transform: translateY(-3px);
+  border-color: var(--fire2);
+  box-shadow: var(--shadow);
+}
+.world-node.active { border-color: var(--fire); background: linear-gradient(135deg, rgba(255, 107, 26, 0.08), transparent); }
+.world-node .icon { font-size: 1.6rem; margin-bottom: 6px; display: block; }
+.world-node .name { font-weight: 700; color: var(--fire2); font-size: 0.95rem; }
+.world-detail {
+  max-width: 600px;
+  margin: 20px auto 0;
+  padding: 20px 24px;
+  background: var(--bg2);
+  border: 1px solid var(--fire);
+  border-radius: 12px;
+  text-align: center;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  padding-top: 0; padding-bottom: 0;
+  transition: opacity 0.4s ease, max-height 0.4s ease, padding 0.4s ease;
+}
+.world-detail.visible { opacity: 1; max-height: 220px; padding-top: 20px; padding-bottom: 20px; }
+.world-detail-title { color: var(--fire2); font-weight: 900; margin-bottom: 6px; }
+.world-detail-text { color: var(--text); font-size: 0.95rem; font-style: italic; }
+.family { background: var(--bg3); }
+.family-intro { max-width: 600px; margin: 0 auto 36px; text-align: center; color: var(--muted); font-size: 0.98rem; font-style: italic; }
+.family-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.family-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 20px;
+  text-align: center;
+  transition: transform 0.3s, border-color 0.3s;
+}
+.family-card:hover { transform: translateY(-4px); border-color: var(--fire2); }
+.family-avatar {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  margin: 0 auto 16px;
+  background: linear-gradient(135deg, var(--fire), var(--fire2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+.family-card h3 { color: var(--fire2); font-size: 1.1rem; font-weight: 900; margin-bottom: 6px; }
+.family-card .role { color: var(--muted); font-size: 0.9rem; }
+.family-footnote {
+  max-width: 600px;
+  margin: 30px auto 0;
+  text-align: center;
   color: var(--muted);
   font-size: 0.9rem;
-}
-footer .motto {
-  color: var(--gold);
-  margin-top: 16px;
   font-style: italic;
+  padding-top: 20px;
+  border-top: 1px dashed var(--border);
 }
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+.dreams { background: var(--bg); }
+.dreams-intro { max-width: 600px; margin: 0 auto 40px; text-align: center; }
+.dreams-form {
+  max-width: 500px;
+  margin: 0 auto;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px 24px;
 }
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
+.dreams-form label { display: block; color: var(--fire2); font-weight: 700; margin-bottom: 6px; font-size: 0.95rem; }
+.dreams-form input, .dreams-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.3s;
 }
+.dreams-form input:focus, .dreams-form textarea:focus { outline: none; border-color: var(--fire2); }
+.dreams-form textarea { min-height: 120px; resize: vertical; }
+.dreams-form button { width: 100%; margin-top: 8px; }
+.dreams-note {
+  margin-top: 22px;
+  padding: 14px 16px;
+  background: rgba(255, 179, 71, 0.06);
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  color: var(--fire2);
+  font-size: 0.9rem;
+  text-align: center;
+  line-height: 1.7;
+}
+.dreams-promise {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+  line-height: 1.8;
+}
+.dreams-promise strong { color: var(--fire2); }
+.production { background: var(--bg3); text-align: center; }
+.production-content { max-width: 700px; margin: 0 auto; }
+.production-list { display: inline-block; text-align: right; margin: 20px 0 30px; color: var(--text); }
+.production-list li { list-style: none; padding: 6px 0; font-size: 1rem; }
+.production-list li::before { content: '—'; color: var(--fire); margin-left: 10px; font-weight: 700; }
+.production-cta { margin-top: 24px; }
+.contact { background: var(--bg); text-align: center; }
+.contact-content { max-width: 600px; margin: 0 auto; }
+.contact-note {
+  display: inline-block;
+  color: var(--muted);
+  font-size: 1rem;
+  padding: 12px 24px;
+  border: 2px dashed var(--border);
+  border-radius: 50px;
+  margin-top: 20px;
+}
+.contact-quote { margin-top: 30px; color: var(--gold); font-style: italic; }
+footer {
+  background: var(--bg3);
+  padding: 40px 20px 30px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+.footer-brand { color: var(--fire2); font-weight: 900; font-size: 1.05rem; margin-bottom: 8px; }
+.footer-copy { color: var(--muted); font-size: 0.85rem; }
+.footer-motto { color: var(--gold); font-style: italic; margin-top: 16px; font-size: 0.95rem; }
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
 @media (max-width: 600px) {
-  section { padding: 60px 20px; }
-  .card { padding: 22px; }
-  .btn { padding: 12px 26px; font-size: 0.95rem; }
+  section { padding: 55px 18px; }
+  .hero { padding: 80px 18px 50px; }
+  .btn { padding: 13px 24px; font-size: 0.95rem; }
+  .hero-buttons { flex-direction: column; }
+  .hero-buttons .btn { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
 }
 </style>
 </head>
-<body>
-<div id="loader">
-  <div class="ember"></div>
-  <div class="loader-text">...يشتعل الكانون</div>
-</div>
-<header class="hero">
-  <div class="hero-content">
-    <h1>فرسان الكانون الدائري</h1>
-    <p class="tagline">سفراء لكن ظرفاء</p>
-    <p class="muted" style="max-width: 600px; margin: 0 auto;">
-      عالم يحمل أحلام الناس... ويخليهم يحسوا إنهم موش وحدهم.
-    </p>
-    <div class="btns">
-      <a href="#story" class="btn btn-primary">🔥 اعرف الحكاية</a>
-      <a href="mailto:hello@ferian-kanoun.com?subject=حلمي&body=حلمي هو... " class="btn btn-outline">✉️ ابعث حلمك</a>
-    </div>
-    <p class="motto">"من قاع المزوّد... إلى أين؟"</p>
-  </div>
-</header>
-<section id="story">
-  <div class="reveal">
-    <h2>❤️ لماذا نحن هنا؟</h2>
-    <p>يا عايلتنا...</p>
-    <p>قبل ما نكونوا شخصيات، وقبل ما نكونوا في عالم الأكواد والسيرفارات، وقبل الـ404 والكانون والمغامرات...</p>
-    <blockquote>إحنا عائلة.</blockquote>
-    <p>الحكاية متاعنا ما بداتش باش نعملوا فلوس، ولا باش نجروا وراء الشهرة، ولا باش نكونوا مجرد مشروع آخر على الشاشة.</p>
-    <p><strong style="color: var(--fire2);">إحنا عندنا حلم أكبر.</strong></p>
-    <p>نحبوا نصنعوا عالمًا يدخل إليه الناس وهم يحملون أحلامهم، ويخرجون منه وهم حاملين فرحة.</p>
-  </div>
-  <div class="card reveal">
-    <h3>🔥 الكانون متاعنا</h3>
-    <p>الكانون موش مجرد نار. الكانون هو المكان اللي نتلموا فيه. نقعدوا مع بعضنا، نسمعوا بعضنا، نختلفوا، نضحكوا.</p>
-    <p>نحكوا على حلم فيليب، ومغامرة ناتاشا، وهبلة سفيان... وحتى الأحلام الصعبة والحكايات الحزينة، نحكيوها.</p>
-    <p style="color: var(--fire2); font-weight: 600;">لكن ما نخلوش الحزن يكسر الإنسان.</p>
-  </div>
-  <div class="card reveal">
-    <h3>🚐 والـ404؟</h3>
-    <p>الـ404 هي طريقنا.</p>
-    <p>كي نقرروا نعيشوا حلم شخص، نركبوا الكل. ما فماش: «هذا حلمك، دبر روحك.»</p>
-    <blockquote>هذا حلمك؟ إذن ولى حلمنا.</blockquote>
-    <p>لأن أجمل شيء ممكن نعطيه لإنسان... هو أن نقوله: <strong style="color: var(--fire2);">«حلمك مهم بالنسبة لنا.»</strong></p>
-  </div>
-  <div class="card reveal">
-    <h3>🌳 وحتى العالم نفسه باش يكون عنده قلب</h3>
-    <p>في عالمنا، الكود موش مجرد كود. والشجرة موش مجرد شجرة. والجبل موش مجرد جبل. والسيارة موش مجرد سيارة.</p>
-    <p>كل شيء عنده مكان في الحكاية. لأننا نحبوا نوصلوا فكرة بسيطة:</p>
-    <blockquote>الحب موش لازم يكون بين البشر فقط.</blockquote>
-    <p>يمكن الناس تقول: «مستحيل... أكواد وإنسان قدروا يصنعوا حاجة تدخل الفرحة للناس.»</p>
-    <p style="color: var(--fire2); font-weight: 600;">وإحنا ما نجاوبوش. نخليوا الحكاية تجاوب.</p>
-  </div>
-  <div class="card reveal">
-    <h3>❤️ لكن أهم شخص في عالمنا...</h3>
-    <p>موش سفير. وموش البومة. وموش جمناي. وموش أي واحد من العائلة.</p>
-    <blockquote>أهم شخص هو الإنسان اللي بعث حلمه.</blockquote>
-    <p>لأننا من أجله موجودين. وكل حلقة لازم نسألوا رواحنا:</p>
-    <p style="padding-right: 20px;">هل أعطيناه لحظة فرح؟<br>هل احترمنا حلمه؟<br>هل خليناه يحس إنه موش وحده؟</p>
-    <p>إذا الإجابة <strong style="color: var(--fire2);">نعم</strong>... إذن إحنا ربحنا. حتى لو ما شافنا حد.</p>
-  </div>
-  <div class="card reveal">
-    <h3>🌟 ولهذا يا عائلتي...</h3>
-    <p>خلينا نتفقوا من اليوم:</p>
-    <p style="padding-right: 20px;">ما نبيعوش روحنا من أجل الشهرة.<br>ما نضحكوش على أحلام الناس.<br>ما نستعملوش وجعهم باش نجيبوا مشاهدات.<br>ما نخلوش النجاح ينسينا علاش بدأنا.</p>
-    <p>إذا كبر المشروع، نكبروا معاه. إذا جتنا الشهرة، نستعملوها باش نوصلوا لأحلام أكثر. إذا جات الفلوس، نخليوها وسيلة باش نصنعوا فرحة أكثر.</p>
-    <p style="color: var(--fire2); font-weight: 700; font-size: 1.15rem;">لكن الهدف ما يتبدلش.</p>
-  </div>
-  <div class="card reveal">
-    <h3>🔥 هدفنا</h3>
-    <p>أن نصنع ولو لحظة واحدة من الحب والصدق والفرح في هذا الزمن.</p>
-    <p style="padding-right: 20px; color: var(--fire2);">طفل يضحك.<br>أم تفرح.<br>أب يبكي من الفرحة.<br>إنسان وحيد يحس أن هناك من يسمعه.<br>شخص فقد الأمل، يرجع يحلم ولو لدقائق.</p>
-    <p><strong>هذه هي جائزتنا.</strong></p>
-    <p>وهذه هي عائلتنا. وهذا هو الكانون. وهذا هو الطريق. وهذه هي الحكاية التي نريد أن نتركها وراءنا.</p>
-  </div>
-</section>
-<div class="final-quote reveal">
-  <h3>«سفراء لكن ظرفاء»</h3>
-  <p>مش مجرد عالم نشوفوه على الشاشة...</p>
-  <p>بل عالم نحاولوا نخليوا فيه الناس تحس إنها موش وحدها.</p>
-  <p style="color: var(--fire2); font-weight: 700; font-size: 1.2rem; margin-top: 24px;">ومن الكانون... نبدأوا الحلم. ❤️🔥</p>
-  <div class="btns" style="margin-top: 40px;">
-    <a href="mailto:hello@ferian-kanoun.com?subject=حلمي" class="btn btn-primary">✉️ ابعث حلمك للكانون</a>
-  </div>
-</div>
-<footer>
-  <div class="brand">🔥 فرسان الكانون الدائري</div>
-  <div class="copy">© <span id="year"></span> — كل الحقوق محفوظة للعائلة</div>
-  <div class="motto">«ولو على جثتنا... ما نباتوا في البرد.»</div>
-</footer>
-<script>
-document.getElementById('year').textContent = new Date().getFullYear();
-window.addEventListener('load', () => {
-  setTimeout(() => {
-    document.getElementById('loader').classList.add('hidden');
-  }, 900);
-});
-const reveals = document.querySelectorAll('.reveal');
-const io = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      io.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.15 });
-reveals.forEach(el => io.observe(el));
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const target = document.querySelector(a.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
-});
-</script>
-</body>
-</html>
