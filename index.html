@@ -665,6 +665,7 @@ footer {
   <div class="footer-copy">© <span id="year"></span> — كل الحقوق محفوظة للعائلة</div>
   <div class="footer-motto">«ولو على جثتنا... ما نباتوا في البرد.»</div>
 </footer>
+
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
   window.addEventListener('load', () => {
@@ -679,3 +680,10 @@ footer {
       }
     });
   }, { threshold: 0.12 });
+  reveals.forEach(el => io.observe(el));
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth
